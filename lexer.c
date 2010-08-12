@@ -52,7 +52,7 @@ struct s_lexer {
 static int lexer_asprintf(char **ret, const char *format, ...);
 static void lexer_tokens_fit(lexer_t *lexer, size_t n);
 static token_t *lexer_new_token(lexer_t *lexer);
-static token_t *lexer_merge_tokens(lexer_t *lexer, int from, int to);
+static token_t *lexer_merge_tokens(lexer_t *lexer, int from, int to, token_kind_t newKind);
 static token_mark_t lexer_mark(lexer_t *lexer);
 static void lexer_reset(lexer_t *lexer, token_mark_t mark);
 static char lexer_current(lexer_t *lexer);
@@ -489,8 +489,9 @@ static token_t *lexer_new_token(lexer_t *lexer) {
 }
 
 
-static token_t *lexer_merge_tokens(lexer_t *lexer, int from, int to) {
+static token_t *lexer_merge_tokens(lexer_t *lexer, int from, int to, token_kind_t newKind) {
 	lexer->tokens[from].to = lexer->tokens[to].to;
+	lexer->tokens[from].kind = newKind;
 	int offset = from - to;
 	int idx = to+1;
 	for (; idx < lexer->current.token; ++idx)
@@ -893,7 +894,7 @@ int lexer_run(lexer_t *lexer) {
 		while (pair_iter->left != TOK_INVALID && !merged) {
 			if (pair_iter->left == left.kind && pair_iter->right == right.kind &&
 				right.from <= left.to+pair_iter->range) {
-				lexer_merge_tokens(lexer, tok_index, tok_index+1);
+				lexer_merge_tokens(lexer, tok_index, tok_index+1, pair_iter->kind);
 				merged = true;
 			}
 			++pair_iter;
