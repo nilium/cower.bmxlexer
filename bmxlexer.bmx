@@ -243,6 +243,15 @@ Type TToken
 	Const TOK_LAST%=TOK_EOF
 	Const TOK_COUNT%=TOK_LAST+1
 	'#endregion
+	
+	Method Compare:Int(other:Object)
+		Local tok:TToken = TToken(other)
+		If tok Then
+			Return ToString().Compare(other.ToString())
+		Else
+			Return Super.Compare(other)
+		EndIf
+	End Method
 End Type
 
 Type TLexer
