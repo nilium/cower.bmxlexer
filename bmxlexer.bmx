@@ -72,6 +72,10 @@ Type TToken
 		Return _cachedStr
 	End Method
 	
+	Method DistanceFrom:Int(other:TToken)
+		Return Abs(Int(_from)-Int(other._to_))
+	End Method
+	
 	'#region token_kind_t
 	Const TOK_INVALID% = 0
 
