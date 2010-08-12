@@ -68,6 +68,10 @@ Type TToken
 		EndIf
 	End Method
 	
+	Method PositionString$()
+		Return "["+line+":"+column+"]"
+	End Method
+	
 	Method ToString$()
 		Return _cachedStr
 	End Method
