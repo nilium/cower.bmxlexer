@@ -63,6 +63,7 @@ typedef enum {
 	TOK_BYTE_KW,
 	TOK_SHORT_KW,
 	TOK_INT_KW,
+	TOK_LONG_KW,
 	TOK_STRING_KW,
 	TOK_OBJECT_KW,
 

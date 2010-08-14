@@ -82,167 +82,136 @@ Type TToken
 	
 	'#region token_kind_t
 	Const TOK_INVALID% = 0
-
 	Const TOK_ID% = 1
-
 	Const TOK_END_KW% = 2
-
 	Const TOK_FUNCTION_KW% = 3
 	Const TOK_ENDFUNCTION_KW% = 4
-
 	Const TOK_METHOD_KW% = 5
 	Const TOK_ENDMETHOD_KW% = 6
-
 	Const TOK_TYPE_KW% = 7
 	Const TOK_EXTENDS_KW% = 8
 	Const TOK_ABSTRACT_KW% = 9
 	Const TOK_FINAL_KW% = 10
 	Const TOK_NODEBUG_KW% = 11
 	Const TOK_ENDTYPE_KW% = 12
-
 	Const TOK_EXTERN_KW% = 13
 	Const TOK_ENDEXTERN_KW% = 14
-
 	Const TOK_REM_KW% = 15
 	Const TOK_ENDREM_KW% = 16
-
 	Const TOK_FLOAT_KW% = 17
 	Const TOK_DOUBLE_KW% = 18
 	Const TOK_BYTE_KW% = 19
 	Const TOK_SHORT_KW% = 20
 	Const TOK_INT_KW% = 21
-	Const TOK_STRING_KW% = 22
-	Const TOK_OBJECT_KW% = 23
-
-	Const TOK_LOCAL_KW% = 24
-	Const TOK_GLOBAL_KW% = 25
-	Const TOK_CONST_KW% = 26
-
-	Const TOK_VARPTR_KW% = 27
-	Const TOK_PTR_KW% = 28
-	Const TOK_VAR_KW% = 29
-
-	Const TOK_NULL_KW% = 30
-
-	Const TOK_STRICT_KW% = 31
-	Const TOK_SUPERSTRICT_KW% = 32
-
-	Const TOK_FRAMEWORK_KW% = 33
-
-	Const TOK_MODULE_KW% = 34
-	Const TOK_MODULEINFO_KW% = 35
-
-	Const TOK_IMPORT_KW% = 36
-	Const TOK_INCLUDE_KW% = 37
-
-	Const TOK_PRIVATE_KW% = 38
-	Const TOK_PUBLIC_KW% = 39
-
-	Const TOK_OR_KW% = 40
-	Const TOK_AND_KW% = 41
-	Const TOK_SHR_KW% = 42
-	Const TOK_SHL_KW% = 43
-	Const TOK_SAR_KW% = 44
-	Const TOK_MOD_KW% = 45
-	Const TOK_NOT_KW% = 46
-
-	Const TOK_WHILE_KW% = 47
-	Const TOK_WEND_KW% = 48
-	Const TOK_ENDWHILE_KW% = 49
-
-	Const TOK_FOR_KW% = 50
-	Const TOK_NEXT_KW% = 51
-	Const TOK_UNTIL_KW% = 52
-	Const TOK_TO_KW% = 53
-	Const TOK_EACHIN_KW% = 54
-
-	Const TOK_REPEAT_KW% = 55
-	Const TOK_FOREVER_KW% = 56
-
-	Const TOK_IF_KW% = 57
-	Const TOK_ENDIF_KW% = 58
-	Const TOK_ELSE_KW% = 59
-	Const TOK_ELSEIF_KW% = 60
-	Const TOK_THEN_KW% = 61
-
-	Const TOK_SELECT_KW% = 62
-	Const TOK_CASE_KW% = 63
-	Const TOK_DEFAULT_KW% = 64
-	Const TOK_ENDSELECT_KW% = 65
-
-	Const TOK_SELF_KW% = 66
-	Const TOK_SUPER_KW% = 67
-	Const TOK_PI_KW% = 68
-	Const TOK_NEW_KW% = 69
-
-	Const TOK_PROTOCOL_KW% = 70
-	Const TOK_ENDPROTOCOL_KW% = 71
-	Const TOK_AUTO_KW% = 72
-	Const TOK_IMPLEMENTS_KW% = 73
-
-	Const TOK_COLON% = 74
-	Const TOK_QUESTION% = 75
-	Const TOK_BANG% = 76
-	Const TOK_HASH% = 77
-	Const TOK_DOT% = 78
-	Const TOK_DOUBLEDOT% = 79
-	Const TOK_TRIPLEDOT% = 80
-	Const TOK_AT% = 81
-	Const TOK_DOUBLEAT% = 82
-	Const TOK_DOLLAR% = 83
-	Const TOK_PERCENT% = 84
-	Const TOK_SINGLEQUOTE% = 85
-	Const TOK_OPENPAREN% = 86
-	Const TOK_CLOSEPAREN% = 87
-	Const TOK_OPENBRACKET% = 88
-	Const TOK_CLOSEBRACKET% = 89
-	Const TOK_OPENCURL% = 90
-	Const TOK_CLOSECURL% = 91
-	Const TOK_GREATERTHAN% = 92
-	Const TOK_LESSTHAN% = 93
-	Const TOK_EQUALS% = 94
-	Const TOK_MINUS% = 95
-	Const TOK_PLUS% = 96
-	Const TOK_ASTERISK% = 97
-	Const TOK_CARET% = 98
-	Const TOK_TILDE% = 99
-	Const TOK_GRAVE% = 100
-	Const TOK_BACKSLASH% = 101
-	Const TOK_SLASH% = 102
-	Const TOK_COMMA% = 103
-	Const TOK_SEMICOLON% = 104
-	Const TOK_PIPE% = 105
-	Const TOK_AMPERSAND% = 106
-	Const TOK_NEWLINE% = 107
-
-	Const TOK_ASSIGN_ADD% = 108
-	Const TOK_ASSIGN_SUBTRACT% = 109
-	Const TOK_ASSIGN_DIVIDE% = 110
-	Const TOK_ASSIGN_MULTIPLY% = 111
-	Const TOK_ASSIGN_POWER% = 112
-
-	Const TOK_ASSIGN_SHL% = 113
-	Const TOK_ASSIGN_SHR% = 114
-	Const TOK_ASSIGN_SAR% = 115
-	Const TOK_ASSIGN_MOD% = 116
-
-	Const TOK_ASSIGN_XOR% = 117
-	Const TOK_ASSIGN_AND% = 118
-	Const TOK_ASSIGN_OR% = 119
-
-	Const TOK_ASSIGN_AUTO% = 120
-	Const TOK_DOUBLEMINUS% = 121
-	Const TOK_DOUBLEPLUS% = 122
-
-	Const TOK_NUMBER_LIT% = 123
-	Const TOK_HEX_LIT% = 124
-	Const TOK_BIN_LIT% = 125
-	Const TOK_STRING_LIT% = 126
-
-	Const TOK_LINE_COMMENT% = 127
-	Const TOK_BLOCK_COMMENT% = 128
-
-	Const TOK_EOF% = 129
+	Const TOK_LONG_KW% = 22
+	Const TOK_STRING_KW% = 23
+	Const TOK_OBJECT_KW% = 24
+	Const TOK_LOCAL_KW% = 25
+	Const TOK_GLOBAL_KW% = 26
+	Const TOK_CONST_KW% = 27
+	Const TOK_VARPTR_KW% = 28
+	Const TOK_PTR_KW% = 29
+	Const TOK_VAR_KW% = 30
+	Const TOK_NULL_KW% = 31
+	Const TOK_STRICT_KW% = 32
+	Const TOK_SUPERSTRICT_KW% = 33
+	Const TOK_FRAMEWORK_KW% = 34
+	Const TOK_MODULE_KW% = 35
+	Const TOK_MODULEINFO_KW% = 36
+	Const TOK_IMPORT_KW% = 37
+	Const TOK_INCLUDE_KW% = 38
+	Const TOK_PRIVATE_KW% = 39
+	Const TOK_PUBLIC_KW% = 40
+	Const TOK_OR_KW% = 41
+	Const TOK_AND_KW% = 42
+	Const TOK_SHR_KW% = 43
+	Const TOK_SHL_KW% = 44
+	Const TOK_SAR_KW% = 45
+	Const TOK_MOD_KW% = 46
+	Const TOK_NOT_KW% = 47
+	Const TOK_WHILE_KW% = 48
+	Const TOK_WEND_KW% = 49
+	Const TOK_ENDWHILE_KW% = 50
+	Const TOK_FOR_KW% = 51
+	Const TOK_NEXT_KW% = 52
+	Const TOK_UNTIL_KW% = 53
+	Const TOK_TO_KW% = 54
+	Const TOK_EACHIN_KW% = 55
+	Const TOK_REPEAT_KW% = 56
+	Const TOK_FOREVER_KW% = 57
+	Const TOK_IF_KW% = 58
+	Const TOK_ENDIF_KW% = 59
+	Const TOK_ELSE_KW% = 60
+	Const TOK_ELSEIF_KW% = 61
+	Const TOK_THEN_KW% = 62
+	Const TOK_SELECT_KW% = 63
+	Const TOK_CASE_KW% = 64
+	Const TOK_DEFAULT_KW% = 65
+	Const TOK_ENDSELECT_KW% = 66
+	Const TOK_SELF_KW% = 67
+	Const TOK_SUPER_KW% = 68
+	Const TOK_PI_KW% = 69
+	Const TOK_NEW_KW% = 70
+	Const TOK_PROTOCOL_KW% = 71
+	Const TOK_ENDPROTOCOL_KW% = 72
+	Const TOK_AUTO_KW% = 73
+	Const TOK_IMPLEMENTS_KW% = 74
+	Const TOK_COLON% = 75
+	Const TOK_QUESTION% = 76
+	Const TOK_BANG% = 77
+	Const TOK_HASH% = 78
+	Const TOK_DOT% = 79
+	Const TOK_DOUBLEDOT% = 80
+	Const TOK_TRIPLEDOT% = 81
+	Const TOK_AT% = 82
+	Const TOK_DOUBLEAT% = 83
+	Const TOK_DOLLAR% = 84
+	Const TOK_PERCENT% = 85
+	Const TOK_SINGLEQUOTE% = 86
+	Const TOK_OPENPAREN% = 87
+	Const TOK_CLOSEPAREN% = 88
+	Const TOK_OPENBRACKET% = 89
+	Const TOK_CLOSEBRACKET% = 90
+	Const TOK_OPENCURL% = 91
+	Const TOK_CLOSECURL% = 92
+	Const TOK_GREATERTHAN% = 93
+	Const TOK_LESSTHAN% = 94
+	Const TOK_EQUALS% = 95
+	Const TOK_MINUS% = 96
+	Const TOK_PLUS% = 97
+	Const TOK_ASTERISK% = 98
+	Const TOK_CARET% = 99
+	Const TOK_TILDE% = 100
+	Const TOK_GRAVE% = 101
+	Const TOK_BACKSLASH% = 102
+	Const TOK_SLASH% = 103
+	Const TOK_COMMA% = 104
+	Const TOK_SEMICOLON% = 105
+	Const TOK_PIPE% = 106
+	Const TOK_AMPERSAND% = 107
+	Const TOK_NEWLINE% = 108
+	Const TOK_ASSIGN_ADD% = 109
+	Const TOK_ASSIGN_SUBTRACT% = 110
+	Const TOK_ASSIGN_DIVIDE% = 111
+	Const TOK_ASSIGN_MULTIPLY% = 112
+	Const TOK_ASSIGN_POWER% = 113
+	Const TOK_ASSIGN_SHL% = 114
+	Const TOK_ASSIGN_SHR% = 115
+	Const TOK_ASSIGN_SAR% = 116
+	Const TOK_ASSIGN_MOD% = 117
+	Const TOK_ASSIGN_XOR% = 118
+	Const TOK_ASSIGN_AND% = 119
+	Const TOK_ASSIGN_OR% = 120
+	Const TOK_ASSIGN_AUTO% = 121
+	Const TOK_DOUBLEMINUS% = 122
+	Const TOK_DOUBLEPLUS% = 123
+	Const TOK_NUMBER_LIT% = 124
+	Const TOK_HEX_LIT% = 125
+	Const TOK_BIN_LIT% = 126
+	Const TOK_STRING_LIT% = 127
+	Const TOK_LINE_COMMENT% = 128
+	Const TOK_BLOCK_COMMENT% = 129
+	Const TOK_EOF% = 130
 	
 	Const TOK_LAST%=TOK_EOF
 	Const TOK_COUNT%=TOK_LAST+1

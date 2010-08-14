@@ -91,6 +91,7 @@ static const char *token_strings[] = {
 	"Byte",
 	"Short",
 	"Int",
+	"Long",
 	"String",
 	"Object",
 	"Local",
@@ -235,6 +236,7 @@ static token_single_t const token_singles[] = {
 	{ .kind = TOK_BYTE_KW, .case_sensitive = false, .matches = "byte" },
 	{ .kind = TOK_SHORT_KW, .case_sensitive = false, .matches = "short" },
 	{ .kind = TOK_INT_KW, .case_sensitive = false, .matches = "int" },
+	{ .kind = TOK_LONG_KW, .case_sensitive = false, .matches = "long" },
 	{ .kind = TOK_STRING_KW, .case_sensitive = false, .matches = "string" },
 	{ .kind = TOK_OBJECT_KW, .case_sensitive = false, .matches = "object" },
 	
